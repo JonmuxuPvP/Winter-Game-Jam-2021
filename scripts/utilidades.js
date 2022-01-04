@@ -113,8 +113,35 @@ class ManejadorDePistaSonido {
     }
 }
 
-class Texto {
-    constructor(texto) {
-        this.texto = texto
+class ManejadorDeItems {
+    constructor(items) {
+        this.items = items;
     }
+
+    getItem(indice) {
+        return this.items[indice];
+    }
+}
+
+class Item {
+    constructor(id, imagen) {
+        this.id = id;
+        this.imagen = new Image();
+        this.imagen.src = imagen;
+    }
+}
+
+class Texto {
+    constructor() {
+        this.texto = [];
+    }
+}
+
+export { 
+    ManejadorDeEscenas, Escena, Objeto, Area, 
+    ManejadorDeFlags, Flag, 
+    ManejadorDeDialogos, 
+    ManejadorDePistaSonido,
+    ManejadorDeItems, Item,
+    Texto 
 }
