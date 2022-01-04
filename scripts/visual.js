@@ -77,7 +77,7 @@ class Dialogo {
         this.imagen = new Image();
         this.imagen.src = "./imagenes/graficos/caja-dialogo.png";
         this.imagenNombre = new Image();
-        this.imagenNombre.src = "./imagenes/graficos/caja-personaje.png";
+        this.imagenNombre.src = "./imagenes/graficos/caja-dialogo-del-nombre.png";
 
         this.separacionDeLinea = 20; // pixeles
         this.posicionX = (Pantalla.canvas.width / 2) - (this.imagen.width / 2);
