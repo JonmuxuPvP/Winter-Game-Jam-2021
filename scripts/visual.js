@@ -51,7 +51,6 @@ class HUD {
 
         for (let i = 0; i < this.items.length; i++) {
             if (typeof Jugador.items[i] !== "undefined") {
-                console.log(Jugador.items[i].id);
                 Pantalla.ctx.drawImage(Jugador.items[i].imagen, 1140, 305 + (i * 60));
             }
         }
