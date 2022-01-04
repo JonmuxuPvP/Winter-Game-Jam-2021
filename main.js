@@ -5,7 +5,11 @@ import { Dialogo } from "./scripts/visual.js";
 let juego = new Juego(1200, 900);
 
 let area = new Area(437, 333, 633, 734);
-let movil = new Objeto(new Area());
+let movil = new Objeto(new Area(1487, 335, 1537, 385), juego,
+    function () {
+
+    }
+);
 let objeto1 = new Objeto(area, juego,
     function () {
         let flag = juego.manejadorDeFlags.getFlag(0);
@@ -131,7 +135,7 @@ let objetoPuertaPas3 = new Objeto(new Area(827, 450, 845, 572), juego,
 );
 let objetoPuertaSalaJefe = new Objeto(new Area(925, 443, 999, 565), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(11);
+        juego.manejadorDeEscenas.cambiarEscena(10);
     }
 );
 let objetoFlechaSalaJefe = new Objeto(new Area(877, 777, 1021, 906), juego,
@@ -161,32 +165,32 @@ let objetoFlechaPas3 = new Objeto(new Area(877, 777, 1021, 906), juego,
 );
 let objetoPuertaCubiculo1 = new Objeto(new Area(560, 329, 713, 873), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(12);
+        juego.manejadorDeEscenas.cambiarEscena(11);
     }
 );
 let objetoPuertaCubiculo2 = new Objeto(new Area(824, 434, 884, 612), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(13);
+        juego.manejadorDeEscenas.cambiarEscena(12);
     }
 );
 let objetoPuertaCubiculo3 = new Objeto(new Area(567, 311, 761, 849), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(14);
+        juego.manejadorDeEscenas.cambiarEscena(13);
     }
 );
 let objetoPuertaCubiculo4 = new Objeto(new Area(1102, 377, 1238, 888), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(15);
+        juego.manejadorDeEscenas.cambiarEscena(14);
     }
 );
 let objetoPuertaCubiculo5 = new Objeto(new Area(1006, 456, 1037, 614), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(16);
+        juego.manejadorDeEscenas.cambiarEscena(15);
     }
 );
 let objetoPuertaCubiculo6 = new Objeto(new Area(1129, 318, 1319, 860), juego,
     function () {
-        juego.manejadorDeEscenas.cambiarEscena(17);
+        juego.manejadorDeEscenas.cambiarEscena(16);
     }
 );
 let objetoFlechaCubiculoPas2a = new Objeto(new Area(877, 777, 1021, 906), juego,
@@ -254,15 +258,15 @@ let escena7 = new Escena(6, "./imagenes/escenas/pasillo-3-dia.png",[flechaPasill
 let escenaHab3 = new Escena(7, "./imagenes/escenas/habitacion-3-dia.png", [objetoPuertaPas2a, objetoFlechaHab3]);
 let escenaPas2a = new Escena(8, "./imagenes/escenas/pasillo-2a-dia.png", [objetoPuertaPas2b, objetoFlechaPas2a, objetoPuertaCubiculo1, objetoPuertaCubiculo2, objetoPuertaCubiculo4, objetoPuertaCubiculo5]);
 let escenaPas2b = new Escena(9, "./imagenes/escenas/pasillo-2b-dia-con-puerta.png", [objetoPuertaPas3, objetoPuertaSalaJefe, objetoFlechaPas2b, objetoPuertaCubiculo3, objetoPuertaCubiculo6]);
-let escenaPas3 = new Escena(10, "./imagenes/escenas/pasillo-3-dia.png", [objetoFlechaPas3]);
-let escenaSalaJefe = new Escena(11, "./imagenes/escenas/sala-jefe-dia.png", [objetoFlechaSalaJefe]);
-let escenaCubiculo1 = new Escena(12, "./imagenes/escenas/cubiculo-1-dia.png", [objetoFlechaCubiculoPas2a, Torre1]);
-let escenaCubiculo2 = new Escena(13, "./imagenes/escenas/cubiculo-2-dia.png", [objetoFlechaCubiculoPas2a, empleadoCub2]);
-let escenaCubiculo3 = new Escena(14, "./imagenes/escenas/cubiculo-3-dia.png", [objetoFlechaCubiculoPas2b]);
-let escenaCubiculo4 = new Escena(15, "./imagenes/escenas/cubiculo-4-dia.png", [objetoFlechaCubiculoPas2a, montonTrabajo, empleadoCub6]);
-let escenaCubiculo5 = new Escena(16, "./imagenes/escenas/cubiculo-5-dia.png", [objetoFlechaCubiculoPas2a, pensador, archivos]);
-let escenaCubiculo6 = new Escena(17, "./imagenes/escenas/cubiculo-6-dia.png", [objetoFlechaCubiculoPas2b]);
-let manejadorDeEscenas = new ManejadorDeEscenas([escena1, escena2, escena3, escena4, escena5, escena6, escena7, escenaHab3, escenaPas2a, escenaPas2b, escenaPas3, escenaSalaJefe, escenaCubiculo1, escenaCubiculo2, escenaCubiculo3, escenaCubiculo4, escenaCubiculo5, escenaCubiculo6]);
+let escenaSalaJefe = new Escena(10, "./imagenes/escenas/sala-jefe-dia.png", [objetoFlechaSalaJefe]);
+let escenaCubiculo1 = new Escena(11, "./imagenes/escenas/cubiculo-1-dia.png", [objetoFlechaCubiculoPas2a, Torre1]);
+let escenaCubiculo2 = new Escena(12, "./imagenes/escenas/cubiculo-2-dia.png", [objetoFlechaCubiculoPas2a, empleadoCub2]);
+let escenaCubiculo3 = new Escena(13, "./imagenes/escenas/cubiculo-3-dia.png", [objetoFlechaCubiculoPas2b]);
+let escenaCubiculo4 = new Escena(14, "./imagenes/escenas/cubiculo-4-dia.png", [objetoFlechaCubiculoPas2a, montonTrabajo, empleadoCub6]);
+let escenaCubiculo5 = new Escena(15, "./imagenes/escenas/cubiculo-5-dia.png", [objetoFlechaCubiculoPas2a, pensador, archivos]);
+let escenaCubiculo6 = new Escena(16, "./imagenes/escenas/cubiculo-6-dia.png", [objetoFlechaCubiculoPas2b]);
+let mapa = new Escena();
+let manejadorDeEscenas = new ManejadorDeEscenas([escena1, escena2, escena3, escena4, escena5, escena6, escena7, escenaHab3, escenaPas2a, escenaPas2b, escenaSalaJefe, escenaCubiculo1, escenaCubiculo2, escenaCubiculo3, escenaCubiculo4, escenaCubiculo5, escenaCubiculo6]);
 juego.manejadorDeEscenas = manejadorDeEscenas;
 
 let dialogo1 = new Dialogo(["hola", "hola 2", "hola 3"]);
