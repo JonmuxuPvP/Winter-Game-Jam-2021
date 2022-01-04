@@ -100,12 +100,18 @@ let flechaPasillo3 = new Objeto (new Area(877, 777, 1021, 906), juego,
 let puertaCafeteria2 = new Objeto (new Area(883, 437, 1009, 599), juego,
     function() {
         juego.manejadorDeEscenas.cambiarEscena(5)
+        let flag = juego.manejadorDeFlags.getFlag(2)
+        if (flag.activa){
+            let dialogo = juego.manejadorDeDialogos.getDialogo(9);
+            dialogo.mostrar();
+            let quitarCaja = juego.manejadorDeItems.getItem(2)
+            juego.jugador.quitarItem(quitarCaja)
+            flag.desactivar();
+        }
     }
 )
 let recepcion = new Objeto(new Area(1070, 388, 1366, 788), juego, 
-    function() {
-            
-        }
+    function() {}
 );
 let objetoPuertaPas2a = new Objeto(new Area(434, 297, 563, 729), juego,
     function () {
