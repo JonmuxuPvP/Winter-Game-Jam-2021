@@ -20,13 +20,13 @@ let objeto2 = new Objeto(new Area(874, 340, 1084, 700), juego,
         juego.manejadorDeEscenas.cambiarEscena(1);
         let flag = juego.manejadorDeFlags.getFlag(1)
         if (flag.activa) {
-             let dialogo = juego.manejadorDeDialogos.getDialogo(8);
-             dialogo.mostrar();
-             flag.desactivar();
+            let dialogo = juego.manejadorDeDialogos.getDialogo(8);
+            dialogo.mostrar();
+            flag.desactivar();
+            let caja = juego.manejadorDeItems.getItem(2)
+            juego.jugador.añadirItem(caja)
         }
-        let caja = juego.manejadorDeItems.getItem(2)
-             juego.jugador.añadirItem(caja)
-     }
+    }
  )
 
 let objeto3 = new Objeto(new Area(835, 349, 1021, 692), juego,
