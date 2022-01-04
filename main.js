@@ -5,6 +5,7 @@ import { Dialogo } from "./scripts/visual.js";
 let juego = new Juego(1200, 900);
 
 let area = new Area(437, 333, 633, 734);
+let movil = new Objeto(new Area());
 let objeto1 = new Objeto(area, juego,
     function () {
         let flag = juego.manejadorDeFlags.getFlag(0);
@@ -245,7 +246,7 @@ let gafas = new Objeto(new Area(585, 672, 700, 778), juego,
 
 let escena1 = new Escena(0, "./imagenes/escenas/sala-principal-dia.png", [objeto1, objeto2]);
 let escena2 = new Escena(1, "./imagenes/escenas/habitacion-2-dia.png", [objeto3, objetoPuertaHab3,puertaHabitacion1,flechaHabitacion2, recepcion]);
-let escena3 = new Escena(2, "./imagenes/escenas/sala-caja-fuerte-dia.png", [objeto2, flechaCajaFuerte])
+let escena3 = new Escena(2, "./imagenes/escenas/sala-caja-fuerte-dia.png", [flechaCajaFuerte])
 let escena4 = new Escena(3, "./imagenes/escenas/habitacion-1-dia.png",[puertaPasillo1,flechaHabitacion1])
 let escena5 = new Escena(4, "./imagenes/escenas/pasillo-1-dia.png",[puertaCafeteria, flechaPasillo1])
 let escena6 = new Escena(5, "./imagenes/escenas/cafeteria-dia.png",[puertaPasillo3,flechaCafeteria, gafas])
