@@ -1,5 +1,5 @@
 import { Juego } from "./scripts/juego.js";
-import { Area, Escena, ManejadorDeDialogos, ManejadorDeEscenas, ManejadorDeItems, ManejadorDeFlags, Item, Objeto, Flag } from "./scripts/utilidades.js";
+import { Area, Escena, ManejadorDeDialogos, ManejadorDeEscenas, ManejadorDeItems, Item, Objeto, ManejadorDeFlags, Flag} from "./scripts/utilidades.js";
 import { Dialogo } from "./scripts/visual.js";
 
 let juego = new Juego(1200, 900);
@@ -12,26 +12,27 @@ let objeto1 = new Objeto(area, juego,
             let dialogo = juego.manejadorDeDialogos.getDialogo(1);
             dialogo.mostrar();
             flag.desactivar();
-        } else {
-            let llave = juego.manejadorDeItems.getItem(0);
-            juego.jugador.añadirItem(llave);
         }
     }
 );
-
 let objeto2 = new Objeto(new Area(874, 340, 1084, 700), juego, 
     function() {
         juego.manejadorDeEscenas.cambiarEscena(1);
     }
 )
-
+let objeto3 = new Objeto (new Area(835, 349, 1021, 692), juego,
+    function() {
+        juego.manejadorDeEscenas.cambiarEscena(2);
+    }
+)
 let escena1 = new Escena(0, "./imagenes/escenas/sala-principal-dia.png", [objeto1, objeto2]);
-let escena2 = new Escena(1, "./imagenes/escenas/habitacion-2-dia.png", [objeto1]);
-let manejadorDeEscenas = new ManejadorDeEscenas([escena1, escena2]);
+let escena2 = new Escena(1, "./imagenes/escenas/habitacion-2-dia.png", [objeto3]);
+let escena3 = new Escena(2, "./imagenes/escenas/sala-caja-fuerte-dia.png", [objeto2]);
+let manejadorDeEscenas = new ManejadorDeEscenas([escena1, escena2, escena3]);
 juego.manejadorDeEscenas = manejadorDeEscenas;
 
 let dialogo1 = new Dialogo(["hola", "hola 2", "hola 3"]);
-let dialogo2 = new Dialogo(["El ascensor no funciona.", "Parece que no funciona..."], "Recepcionista");
+let dialogo2 = new Dialogo(["Esto no creo que funcione."], "");
 let arrayDialogos = [dialogo1, dialogo2];
 let manejadorDeDialogos = new ManejadorDeDialogos(arrayDialogos);
 juego.manejadorDeDialogos = manejadorDeDialogos;
