@@ -10,6 +10,10 @@ class Jugador {
         Jugador.items[item.id] = item;
     }
 
+    quitarItem(item) {
+        Jugador.items[item.id] = undefined;
+    }
+
 }
 
 
