@@ -35,6 +35,7 @@ class Juego {
 
             if (!this.dialogoEnPantalla) {
                 for (const objeto of this.manejadorDeEscenas.escenaActual.objetos) {
+                    this.manejadorDeEscenas.cambiarEscena(this.manejadorDeEscenas.escenaActual.id + 10);
                     if (objeto.area.enArea(click.x, click.y)) {
                         objeto.codigo();
                     }

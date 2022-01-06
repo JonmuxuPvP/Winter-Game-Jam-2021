@@ -92,6 +92,10 @@ class ManejadorDePistaSonido {
         this.pistas[indice].play();
     }
 
+    volumenPista(indice, volumen) {
+        this.pistas[indice].audio = volumen;
+    }
+
     pausaPista(indice) {
         this.pistas[indice].pause();
     }
